@@ -30,6 +30,7 @@ export default {
   methods: {
 
     setEditing(id) {
+      this.$router.push(`/admin/products/${id}`)
       this.$emit('edit', id)
     },
 

@@ -3,24 +3,30 @@ import ProductUploader from './components/ProductUploader.js';
 
 import Admin from './pages/admin/index.js'
 import AdminProducts from './pages/admin/AdminProducts.js'
+import AdminProductEditor from './pages/admin/ProductEditor.js'
 import Home from './pages/Home.js'
 
 import Storage from './storage.js'
 
-const User = { template: `<h1>User</h1>` }
-
 const routes =     
 [
-  { path: '/admin/products/edit/:id',
-    component: ProductEditorExp,
+  /*
+  { path: '/admin/products/:id',
+    component: AdminProductEditor,
     props: true 
-  }
+  },
 
   { path: '/admin/products', 
     component: AdminProducts
-  },
+  },*/
 
-  { path: '/admin', component: Admin },
+  { path: '/admin', 
+    component: Admin,
+    children: [
+      { path: 'products/:id', component: AdminProductEditor, props: true },
+      { path: 'products', component: AdminProducts },
+      
+    ] },
 
   { path: '/', 
     component: Home
@@ -38,22 +44,3 @@ const router = new VueRouter({
 })
 
 const app = new Vue({ router }).$mount('#app')
-
-/*
-let app = new Vue({
-  el: '#app',
-  data: {
-    
-  },
-  template: 
-  `
-    <div>
-      <router-link to="/foo">Go to Foo</router-link>
-    </div>
-  `
-  ,
-  components: {
-    App
-  }
-})
-*/

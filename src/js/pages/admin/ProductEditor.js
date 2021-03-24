@@ -3,7 +3,7 @@ import PhotoUploader from './PhotoUploader.js'
 
 const template = 
 `
-  <div>
+  <div v-if="isReady">
     <h1>Editando el Producto: {{ product.id }}</h1>
     <div>
       <div>
@@ -69,10 +69,10 @@ const template =
 
 export default {
   name: 'ProductEditor',
-  props: ['initialData', 'id'],
+  props: ['id'],
   data() {
     return {
-      product: JSON.parse(JSON.stringify(this.initialData)),
+      product: {},
       photosToUpload: []
     }
   },
@@ -99,7 +99,8 @@ export default {
 
       product.urlOfCover = undefined
       await api.updateProduct(product, this.photosToUpload)
-      this.$emit('product-updated')
+      this.$router.push('/admin/products')
+      //this.$emit('product-updated')
     },
 
     async deletePhoto(id) {
@@ -114,21 +115,25 @@ export default {
       })*/
 
       this.product.photos = newPhotos;
+    },
+
+    async getProduct() {
+      console.log(this.id)
+      this.product = await api.getProduct(this.id);
+      console.log(this.product)
     }
   },
 
   computed: {
-    allPhotos() {
-      return this.photosToUpload
-    },
-  },
-
-  watch: {
-    initialData: function(val) {
-      this.product = JSON.parse(JSON.stringify(val))
-      console.log(this.product)
+    isReady() {
+      return (this.product)
     }
   },
+
+  created() {
+    this.getProduct();
+  },
+
   components: {
     PhotoUploader
   },

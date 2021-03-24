@@ -6,11 +6,7 @@ import ProductEditor from './ProductEditor.js'
 const template = 
 `
   <div>
-    <div v-if="isEditing">
-      <product-editor :initial-data="productEditing"
-      @product-updated="updateProduct"/>
-    </div>
-    <div v-else>
+    <div>
       <h1>Registra un producto</h1>
       
       <div>
@@ -81,7 +77,6 @@ const template =
             <img :src="photoCover" width="70" height="70"/>
           </div>
           <registed-products-previewer :products="registedProducts" 
-          @edit="setEditingProduct"
           @delete="deleteProduct"/>
         </div>
       </div>    
@@ -189,7 +184,7 @@ export default {
       this.byRequest = false
 
       this.photos.forEach( photo => {
-        revoqueSource(photos.url)
+        revoqueSource(photo.url)
       })
 
       this.photos = []
@@ -255,7 +250,6 @@ export default {
   },
 
   created() {
-    console.log('fetching...')
     this.getAllProducts()
   },
 

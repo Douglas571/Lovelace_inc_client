@@ -11,10 +11,7 @@ export default {
   photos: [],
   cover: '',
 
-  registedProducts: [],
-  editing: false,
-  updateEditing: false,
-  currentEditingId: null,
+  registedProducts: []
 
 
 }
