@@ -1,0 +1,16 @@
+# ignore packages installed by npm
+data/
+node_modules/
+
+test/resources/
+front-end/public/img/art/
+
+#front-end/react-app/
+front-end/react-app/node_modules
+front-end/react-app/build
+
+idb.bat
+stw.bat
+
+*~
+.DS_Store

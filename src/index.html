@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Hello World!</title>
+    <!-- This is a development version of Vue.js! -->
+
+    <script src="/vendor/vue.js"></script>
+    <script src="/vendor/vue-router.js"></script>
+    
+    <!--
+    MATERIALIZE
+    <script src="/vendor/materialize.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/vendor/materialize.min.css"  media="screen,projection"/>
+    -->
+
+    <!--
+      To prevent waterfall-loading, we preload
+      all the JS Module files of our application.
+
+      <link rel="modulepreload" href="/components/App.js">
+      <link rel="modulepreload" href="/components/BaseButton.js">
+    -->
+  </head>
+  <body>
+    <div id="app">
+      <router-link to="/">/inicio</router-link>
+      <router-link to="/admin">/administración</router-link>
+      <router-view></router-view>
+    </div>
+  </body>
+  <script src="/js/main.js" type="module"></script>
+</html>
