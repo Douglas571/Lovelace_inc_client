@@ -7,7 +7,10 @@ const template =
 `
   <div>      
 
-    <button @click="newProduct">Nuevo Producto</button>
+    <button @click="newProduct"class="waves-effect waves-light btn">
+      <i class="material-icons">add_circle_outlined</i>
+      Nuevo Producto
+    </button>
 
     <div>
       <registed-products-previewer :products="registedProducts" 

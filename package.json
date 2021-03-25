@@ -10,9 +10,12 @@
   "author": "Douglas Socorro",
   "license": "ISC",
   "dependencies": {
+    "autonumeric": "^4.6.0",
+    "currency.js": "^2.0.3",
     "lodash": "^4.17.21",
     "vue": "^2.6.12",
-    "vue-router": "^3.5.1"
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "materialize-css": "^1.0.0-rc.2"

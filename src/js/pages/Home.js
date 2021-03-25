@@ -3,7 +3,7 @@ import api from '../util/api.js'
 const template =
 `
   <div>
-    <h1>Inicio</h1>
+    <h1>NOMBRE_PAGINA</h1>
 
     <h3>Mis principales productos:</h3>
     <div>
