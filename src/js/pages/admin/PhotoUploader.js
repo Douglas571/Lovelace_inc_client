@@ -9,7 +9,7 @@ const template =
       @change="updatePhotos" 
       multiple/>
     
-    <button @click="uploadPhoto" >Subir foto</button>
+    <button @click="uploadPhoto">Subir foto</button>
   </div>
 `
 

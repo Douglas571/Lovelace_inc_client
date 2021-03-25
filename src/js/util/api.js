@@ -1,3 +1,24 @@
+export async function fetchGQL(data) {
+  const res = await fetch('http://localhost:4000/query', 
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+  )
+
+  const json = await res.json()
+
+  if(json.data) {
+    return json.data
+  }
+
+  return json
+}
+
 async function gqlFetch(data) {
   return await fetch('http://localhost:4000/query', 
     {

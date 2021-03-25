@@ -1,3 +1,5 @@
+import storage from '../../storage.js'
+
 const template = 
 `
   <div>
@@ -30,12 +32,13 @@ export default {
   methods: {
 
     setEditing(id) {
-      this.$router.push(`/admin/products/${id}`)
+      this.$router.push(`/admin/products/edit/${id}`)
       this.$emit('edit', id)
     },
 
-    deleteEvent(id) {
-      this.$emit('delete', id)
+    async deleteEvent(id) {
+      console.log(await storage.deleteProduct(id))
+      this.$emit('delete')
     }
 
   },
