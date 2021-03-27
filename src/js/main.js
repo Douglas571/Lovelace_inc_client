@@ -11,7 +11,7 @@ import Products from './pages/products/index.js'
 import ProductsProduct from './pages/products/product.js'
 
 
-import Storage from './storage.js'
+import storage from './storage.js'
 
 const routes =     
 [
@@ -48,3 +48,8 @@ const router = new VueRouter({
 })
 
 const app = new Vue({ router }).$mount('#app')
+
+var elems = document.querySelectorAll('.sidenav');
+var instances = M.Sidenav.init(elems);
+
+console.log(instances)

@@ -24,9 +24,28 @@
   </head>
   <body>
     <div id="app">
-      <router-link to="/">/inicio</router-link>
-      <router-link to="/admin">/administración</router-link>
-      <router-view></router-view>
+      <nav>
+        <div class="nav-wrapper">
+          <router-link to="/" class="brand-logo">Logo</router-link>
+          
+          <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav" class="right hide-on-med-and-down">
+            <li><router-link to="/">Inicio</router-link></li>
+            <li><router-link to="/admin">Administración</router-link>  </li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><router-link to="/">Inicio</router-link></li>
+        <li><router-link to="/admin">Administración</router-link>  </li>
+      </ul>
+
+
+      <div class="container">
+        <router-view></router-view>
+      </div>
+      
     </div>
   </body>
   <script src="/js/main.js" type="module"></script>
